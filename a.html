@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>appreciation</title>
+</head>
+
+<body>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<style>
+.txt2{
+    display: inline-block;
+    width: 100%;
+    /*コレ*/padding: 1em 0.5em;
+    /*コレ*/line-height: 1;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    margin: 0.5em 0;
+}
+.button{
+    display : inline-block;
+    border-radius : 5%;
+    font-size : 12pt;
+    text-align : center;
+    cursor : pointer;
+    padding : 12px 12px;
+    background : #855dcd;
+    color : #ffffff;
+    line-height : 0.5em;
+    opacity : 1;
+    transition : .3s;
+}
+.button:hover {
+    opacity : 1;
+}
+</style>
+
+<!---- フォーム ---->
+<form name="myForm">
+[Today I appreciate]<br>
+<input type="text" name="app1" class="txt2" value="1)"><br>
+<input type="text" name="app2" class="txt2" value="2)"><br>
+<input type="text" name="app3" class="txt2" value="3)"><br>
+<input type="button" value="Post a appreciate"
+onclick="Jump();" class="button">
+</form>
+
+<!---- スクリプト ---->
+<script type="text/javascript">
+/*====[ 関数 : URL を取得して移動 ]====*/
+function Jump(){
+// テキストを取得して URL を組み立てる
+var myURL =
+"https://warpcast.com/~/compose?text=" +
+"Today I appreciate:%0D%0A%0D%0A" +
+document.myForm.app1.value +
+"%0D%0A%0D%0A" +
+document.myForm.app2.value +
+"%0D%0A%0D%0A" +
+document.myForm.app3.value;
+// ページを移動
+location.href = myURL;
+return;
+}
+</script>
+
+</body>
+
+</html>
